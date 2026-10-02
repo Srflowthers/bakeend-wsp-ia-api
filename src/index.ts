@@ -13,7 +13,7 @@ const app = new Hono<AppEnv>();
 app.use("/api/*", async (c, next) => {
   const corsMiddleware = cors({
     origin: c.env.FRONTEND_URL || "*",
-    allowHeaders: ["Authorization", "Content-Type"],
+    allowHeaders: ["Authorization", "Content-Type", "x-api-secret"],
     allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   });
   return corsMiddleware(c, next);

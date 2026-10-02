@@ -7,7 +7,7 @@ export type Env = {
   META_APP_ID: string; META_APP_SECRET: string; META_VERIFY_TOKEN: string; GRAPH_VERSION: string; META_API_TOKEN: string;
   JWT_SECRET: string;
   TURSO_DATABASE_URL: string; TURSO_AUTH_TOKEN: string;
-  FRONTEND_URL: string;
+  FRONTEND_URL: string; API_SECRET: string;
 };
 export type Vars = { tenantId: string };
 export type AppEnv = { Bindings: Env; Variables: Vars };
