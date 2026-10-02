@@ -32,7 +32,6 @@ app.route("/api/test-chat", testChat);
 app.all("*", (c) => c.json({ error: "Not Found" }, 404));
 
 export class WorkflowStatusDO {
-  constructor(state: any, env: any) {}
   async fetch() { return new Response("OK"); }
 }
 
