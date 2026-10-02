@@ -16,7 +16,7 @@ businesses.get("/me", async (c) => {
   return c.json({
     tenant: t.data, ai: ai.data,
     whatsapp: wa.data ? { ...wa.data, phone_number_id: mask(wa.data.phone_number_id), waba_id: mask(wa.data.waba_id) } : null,
-    sources: (ds.data ?? []).map((s) => ({ type: s.type, status: s.status,
+    sources: (ds.data ?? []).map((s: any) => ({ type: s.type, status: s.status,
       summary: s.type === "excel" ? `${s.config.products?.length ?? 0} productos` : s.config.url })),
   });
 });

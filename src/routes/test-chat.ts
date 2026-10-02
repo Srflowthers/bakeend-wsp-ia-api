@@ -8,7 +8,7 @@ import type { AppEnv } from "../types";
 export const testChat = new Hono<AppEnv>();
 
 testChat.post("/", async (c) => {
-  const { message, phone_number_id } = await c.req.json<{ message: string, phone_number_id?: string }>();
+  const { message } = await c.req.json<{ message: string, phone_number_id?: string }>();
   const db = getDb(c.env);
   
   // Usamos el id del tenant autenticado

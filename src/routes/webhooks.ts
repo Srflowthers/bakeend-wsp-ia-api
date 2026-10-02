@@ -14,7 +14,7 @@ webhooks.get("/whatsapp", (c) => {
     ? c.text(q["hub.challenge"]) : c.text("Forbidden", 403);
 });
 
-async function validSignature(env: Env, raw: string, header?: string) {
+export async function validSignature(env: Env, raw: string, header?: string) {
   if (!header) return false;
   const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(env.META_APP_SECRET), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
   const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(raw));
