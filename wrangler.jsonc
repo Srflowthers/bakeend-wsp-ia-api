@@ -12,7 +12,7 @@
 		"enabled": true
 	},
 	"vars": {
-		"GEMINI_MODEL": "gemini-1.5-flash-8b",
+		"GEMINI_MODEL": "gemini-3.8-flash",
 		"GRAPH_VERSION": "v21.0"
 	}
 }
