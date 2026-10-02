@@ -14,5 +14,11 @@
 	"vars": {
 		"GEMINI_MODEL": "gemini-3.8-flash",
 		"GRAPH_VERSION": "v21.0"
-	}
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"deleted_classes": ["WorkflowStatusDO"]
+		}
+	]
 }
