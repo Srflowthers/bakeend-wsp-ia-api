@@ -15,10 +15,19 @@
 		"GEMINI_MODEL": "gemini-3.8-flash",
 		"GRAPH_VERSION": "v21.0"
 	},
-	"migrations": [
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "WORKFLOW_STATUS",
+				"class_name": "WorkflowStatusDO"
+			}
+		]
+	},
+	"workflows": [
 		{
-			"tag": "v1",
-			"deleted_classes": ["WorkflowStatusDO"]
+			"binding": "MY_WORKFLOW",
+			"name": "my-workflow",
+			"class_name": "MyWorkflow"
 		}
 	]
 }
