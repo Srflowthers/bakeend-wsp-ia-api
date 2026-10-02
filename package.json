@@ -18,6 +18,7 @@
 	},
 	"dependencies": {
 		"@libsql/client": "^0.18.0",
+		"@supabase/supabase-js": "^2.117.2",
 		"bcryptjs": "^3.0.3",
 		"hono": "^4.13.12",
 		"react": "19.2.1",
@@ -47,7 +48,7 @@
 	},
 	"private": true,
 	"scripts": {
-		"build": "tsc -b && vite build",
+		"build": "tsc -b",
 		"cf-typegen": "wrangler types",
 		"check": "tsc && wrangler deploy --dry-run",
 		"deploy": "npm run build && wrangler deploy",
