@@ -17,8 +17,12 @@
 		"docs_url": "https://developers.cloudflare.com/workflows/"
 	},
 	"dependencies": {
+		"@libsql/client": "^0.18.0",
+		"bcryptjs": "^3.0.3",
+		"hono": "^4.13.12",
 		"react": "19.2.1",
-		"react-dom": "19.2.1"
+		"react-dom": "19.2.1",
+		"xlsx": "^0.18.5"
 	},
 	"devDependencies": {
 		"@cloudflare/vite-plugin": "1.52.1",
@@ -47,7 +51,7 @@
 		"cf-typegen": "wrangler types",
 		"check": "tsc && wrangler deploy --dry-run",
 		"deploy": "npm run build && wrangler deploy",
-		"dev": "vite",
+		"dev": "wrangler dev",
 		"lint": "eslint .",
 		"preview": "npm run build && vite preview",
 		"test": "vitest run"

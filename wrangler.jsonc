@@ -5,49 +5,14 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "bakeend-wsp-ia-api",
-	"main": "worker/index.ts",
+	"main": "src/index.ts",
 	"compatibility_date": "2025-10-08",
-	"assets": {
-		"directory": "./dist",
-		"not_found_handling": "single-page-application"
-	},
+	"compatibility_flags": ["nodejs_compat"],
 	"observability": {
 		"enabled": true
 	},
-	/**
-	 * Workflows
-	 * Define Workflows to orchestrate multi-step processes
-	 * https://developers.cloudflare.com/workflows/
-	 */
-	"workflows": [
-		{
-			"name": "my-workflow",
-			"binding": "MY_WORKFLOW",
-			"class_name": "MyWorkflow"
-		}
-	],
-	/**
-	 * Durable Objects
-	 * Used for WebSocket state management and real-time updates
-	 * https://developers.cloudflare.com/durable-objects/
-	 */
-	"durable_objects": {
-		"bindings": [
-			{
-				"name": "WORKFLOW_STATUS",
-				"class_name": "WorkflowStatusDO"
-			}
-		]
-	},
-	/**
-	 * Migrations
-	 * Required for Durable Objects
-	 */
-	"migrations": [
-		{
-			"tag": "v1",
-			"new_sqlite_classes": ["WorkflowStatusDO"]
-		}
-	],
-	"upload_source_maps": true
+	"vars": {
+		"GEMINI_MODEL": "gemini-1.5-flash-8b",
+		"GRAPH_VERSION": "v21.0"
+	}
 }
