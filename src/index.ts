@@ -10,7 +10,14 @@ import { testChat } from "./routes/test-chat";
 import type { AppEnv } from "./types";
 
 const app = new Hono<AppEnv>();
-app.use("/api/*", cors());
+app.use("/api/*", async (c, next) => {
+  const corsMiddleware = cors({
+    origin: c.env.FRONTEND_URL || "*",
+    allowHeaders: ["Authorization", "Content-Type"],
+    allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  });
+  return corsMiddleware(c, next);
+});
 app.get("/api/health", (c) => c.json({ ok: true }));
 
 app.route("/api/auth", auth);
